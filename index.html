@@ -61,23 +61,25 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(194, 24, 91, 0.8), rgba(194, 24, 91, 0.8)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            background: linear-gradient(rgba(194, 24, 91, 0.7), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
             color: var(--text-light);
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
 
         .hero h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .btn {
@@ -89,11 +91,13 @@
             border-radius: 30px;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .btn:hover {
             background-color: #128C7E;
+            transform: scale(1.05);
         }
 
         /* Services Section */
@@ -104,41 +108,77 @@
         }
 
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            text-transform: capitalize;
         }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .service-card {
             background: white;
-            padding: 30px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
             border-bottom: 4px solid var(--primary-color);
         }
 
-        .service-card i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
+        .service-content {
+            padding: 25px 20px;
         }
 
-        .service-card h3 {
-            font-size: 1.3rem;
+        .service-content h3 {
+            font-size: 1.4rem;
             margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+            cursor: pointer;
         }
 
         /* Contact Section */
@@ -154,28 +194,30 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .contact-item {
             flex: 1;
             min-width: 250px;
-            padding: 20px;
+            padding: 30px 20px;
             background: white;
-            border: 1px solid #ddd;
+            border-top: 4px solid var(--primary-color);
             border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         .contact-item i {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .social-link {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.1rem;
         }
 
         /* Footer */
@@ -189,12 +231,8 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
+            .hero h2 { font-size: 2.2rem; }
+            header h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -209,7 +247,8 @@
     <!-- Hero / Banner Utama -->
     <section class="hero">
         <h2>Wujudkan Momen Spesial Anda Bersama Kami</h2>
-        <p>Layanan profesional untuk tata rias dan dokumentasi hari bahagia Anda. Percayakan kecantikan Anda pada ahlinya.</p>
+        <p>Layanan profesional untuk tata rias dan dekorasi hari bahagia Anda. Percayakan kecantikan dan kesempurnaan acara Anda pada ahlinya.</p>
+        <br>
         <a href="https://wa.me/6285710213269" class="btn" target="_blank">
             <i class="fab fa-whatsapp"></i> Hubungi Kami Sekarang
         </a>
@@ -219,43 +258,72 @@
     <section class="services">
         <h2 class="section-title">Layanan Kami</h2>
         <div class="service-grid">
+            <!-- Service 1 -->
             <div class="service-card">
-                <i class="fas fa-ring"></i>
-                <h3>Make Up Pengantin</h3>
-                <p>Tata rias anggun dan mempesona untuk ratu sehari di hari pernikahan Anda.</p>
+                <img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Make Up Pengantin" class="service-img">
+                <div class="service-content">
+                    <h3>Make Up Pengantin</h3>
+                    <p>Tata rias anggun dan mempesona untuk ratu sehari di hari pernikahan Anda, menjamin Anda tampil sempurna.</p>
+                </div>
             </div>
+            <!-- Service 2 -->
             <div class="service-card">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Make Up Wisuda</h3>
-                <p>Tampil cantik, segar, dan percaya diri di hari kelulusan Anda.</p>
+                <img src="https://images.unsplash.com/photo-1523285367489-d38bc0cc86cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Make Up Wisuda" class="service-img">
+                <div class="service-content">
+                    <h3>Make Up Wisuda</h3>
+                    <p>Tampil cantik, segar, dan percaya diri di hari kelulusan Anda dengan riasan *flawless* dan tahan lama.</p>
+                </div>
             </div>
+            <!-- Service 3 -->
             <div class="service-card">
-                <i class="fas fa-heart"></i>
-                <h3>Make Up Tunangan</h3>
-                <p>Riasan manis dan elegan untuk momen lamaran/tunangan Anda.</p>
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Make Up Tunangan" class="service-img">
+                <div class="service-content">
+                    <h3>Make Up Tunangan</h3>
+                    <p>Riasan manis, natural, dan elegan untuk momen lamaran atau pertunangan Anda yang tak terlupakan.</p>
+                </div>
             </div>
+            <!-- Service 4 -->
             <div class="service-card">
-                <i class="fas fa-child"></i>
-                <h3>Make Up Khitanan</h3>
-                <p>Tata rias khusus untuk acara syukuran dan khitanan keluarga Anda.</p>
+                <img src="https://images.unsplash.com/photo-1512496015851-a1cbf21a6907?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Make Up Khitanan" class="service-img">
+                <div class="service-content">
+                    <h3>Make Up Khitanan</h3>
+                    <p>Layanan tata rias khusus untuk acara syukuran dan khitanan agar keluarga tampil menawan menyambut tamu.</p>
+                </div>
             </div>
+            <!-- Service 5 -->
             <div class="service-card">
-                <i class="fas fa-camera"></i>
-                <h3>Video & Foto</h3>
-                <p>Dokumentasi lengkap foto dan video untuk mengabadikan setiap momen berharga.</p>
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video & Foto" class="service-img">
+                <div class="service-content">
+                    <h3>Video & Foto</h3>
+                    <p>Tim profesional untuk dokumentasi lengkap, mengabadikan setiap detik momen berharga Anda dalam foto & video.</p>
+                </div>
             </div>
+            <!-- Service 6 -->
             <div class="service-card">
-                <i class="fas fa-campground"></i>
-                <h3>Sewa Tenda & Pelaminan</h3>
-                <p>Menyediakan tenda elegan dan dekorasi pelaminan berbagai tema.</p>
+                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sewa Tenda & Pelaminan" class="service-img">
+                <div class="service-content">
+                    <h3>Sewa Tenda & Pelaminan</h3>
+                    <p>Menyediakan berbagai pilihan tenda mewah dan dekorasi pelaminan dengan tema yang bisa disesuaikan.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Galeri Inspirasi (New Section) -->
+    <section class="gallery">
+        <h2 class="section-title">Inspirasi & Portofolio</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Galeri 1" class="gallery-img">
+            <img src="https://images.unsplash.com/photo-1505932785022-2cb570530737?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Galeri 2" class="gallery-img">
+            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Galeri 3" class="gallery-img">
+            <img src="https://images.unsplash.com/photo-1549413283-e18e00c3b01a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Galeri 4" class="gallery-img">
         </div>
     </section>
 
     <!-- Informasi Kontak & Lokasi -->
     <section class="contact">
         <h2 class="section-title">Informasi & Pemesanan</h2>
-        <p>Kunjungi galeri kami atau hubungi kami melalui kontak di bawah ini untuk konsultasi dan pemesanan.</p>
+        <p>Kunjungi galeri kami atau hubungi kami melalui kontak di bawah ini untuk konsultasi tanggal dan tema acara Anda.</p>
         
         <div class="contact-info">
             <div class="contact-item">
@@ -272,7 +340,7 @@
             <div class="contact-item">
                 <i class="fab fa-instagram"></i>
                 <h3>Instagram</h3>
-                <p>Lihat portofolio kami:</p>
+                <p>Lihat karya terbaru kami:</p>
                 <a href="https://instagram.com/laninugie" class="social-link" target="_blank">@laninugie</a>
             </div>
         </div>
